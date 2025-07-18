@@ -1,0 +1,212 @@
+
+/* Configuracion*/
+:root{
+    --color-primary: rgb(2, 88, 2);
+    --color-primary-hover: rgb(1, 61, 1);
+    --color-secondary: #fff;
+    --background-color-primary: rgb(203, 255, 203) ;
+    --background-color-primary-transparent: rgba(0, 139, 0, 0.212) ;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--color-primary);
+}
+
+body{
+    background-image: url('/../assets/image/campo-fondo.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+ul{
+    list-style: none;
+}
+
+input{
+    outline: 0;
+}
+
+button{
+    border: 0;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+img{
+    display: block;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/*Fin Configuracion*/
+
+main{
+    background-color: rgba(255, 255, 255, 0.247);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title_inicio{
+    background-color: rgba(255, 255, 255, 0.849);
+    padding: 0.2em 0.8em;
+    border-radius: 3em;
+    margin-bottom: 1em;
+}
+
+.content-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.774);
+    padding: 2.5em 1.2em 0 1.2em;
+    border-radius: .8em;
+}
+
+.form-inicio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 2em;
+}
+
+.input-incio::placeholder{
+    color:rgba(2, 88, 2, 0.658);
+}
+
+.input-incio{
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 1.5em;
+    font-weight: bold;
+    background-color: var(--background-color-primary-transparent);
+    border: none;
+    font-size: 1.2rem;
+}
+
+.input-incio:focus{
+    color: rgb(2, 80, 2);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid var(--color-primary);
+}
+/*para mantener el focus cuando tenga texto*/
+.input-incio:not(:placeholder-shown){
+    color: rgb(2, 80, 2);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid var(--color-primary);
+}
+
+.content-rol{
+    width: 100%;
+
+}
+
+.content-rol>label{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+
+}
+.content-rol>.select-rol{
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 1.5em;
+    font-weight: bold;
+    background-color: var(--background-color-primary-transparent);
+    border: none;
+    font-size: 1.2rem;
+}
+
+/*para estilar el contenido del select */
+.content-rol>.select-rol, ::picker(select){
+    appearance: base-select ;
+
+}
+
+::picker(select){
+    margin-top: 0.3em;
+    border-radius: .5em;
+    border: 1px solid var(--color-primary);
+}
+
+option{
+    background-color: var(--background-color-primary);
+    color: var(--color-primary);
+    font-weight: bold;
+    padding: 0.5em;
+    font-size: 1.2rem;
+}
+
+option:focus{
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+option::checkmark{
+    display: none;
+}
+
+.validaciones{
+
+}
+
+.content-validacion>*{
+    display: inline-block;
+    margin: 0.5em 0;
+    padding: 0 0.5em;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.btns{
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    font-weight: bold;
+    background-color: var(--background-color-primary);
+    border: none;
+    font-size: 1.2rem;
+}
+
+.btns:hover{
+    color:  var(--color-secondary);
+    background-color: var(--color-primary-hover);
+}
+
+.contentn-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: .2em;
+    user-select: none;
+}
+
+.contentn-logo> p:nth-child(1){
+    background-color: white;
+    padding: .1em 0 .1em .2em;
+    border-radius: .3em 0 0 .3em ;
+}
+
+.contentn-logo> p:nth-child(2){
+    color: #fff;
+    background-color: var(--color-primary);
+    padding: .1em .2em .1em 0;
+    border-radius: 0 .3em .3em 0;
+}

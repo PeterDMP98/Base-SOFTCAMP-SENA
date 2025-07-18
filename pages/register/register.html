@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="register.js" defer></script>
+    <link rel="stylesheet" href="register-css.css">
+    <title>SOFTCAMP</title>
+</head>
+<body>
+    <header></header>
+
+    <Main>
+        <h1 class="title_inicio">
+            Registro
+        </h1>
+    
+        <div class="content-form">
+            <form action="" class="form-inicio">
+                <input class="input-incio" id="register_nombre" type="text" name="nombre" placeholder="Nombre" required>
+                <input class="input-incio" id="register_email" type="text" name="email" placeholder="Correo" required>
+                <input class="input-incio" id="register_telefono" type="text" name="nombre" placeholder="telefono" required>
+                
+                <div class="content-rol">
+                    <label for="campesino">Rol</label>
+                    <select class="select-rol" id="select_rol" name="rol">
+                        <option class="option-rol" value="campesino">Campesino</option>
+                        <option class="option-rol" value="Comprador">Comprador</option>
+                    </select>
+                        
+                </div>
+
+                <input class="input-incio" id="register_ubicacion" type="text" name="ubicacion" placeholder="ubicacion" required>
+                <input class="input-incio" id="register_password" type="password" name="password" placeholder="Contraseña" required>
+
+                <div class="validaciones">
+                    <div class="content-validacion" >
+                        <label for="validacion">No soy un robot</label>
+                        <input class="input-incio-validacion" id="register_validacion" type="checkbox" name="password" required>
+                    </div>
+
+                    <div class="content-validacion">
+                        <label for="terminos">Acepto los terminos y condiciones</label>
+                        <input class="input-incio-validacion" id="register_terminos" type="checkbox" name="password" required>
+                    </div>
+                </div>
+
+                <button class="registrarme_btn btns" type="submit">Registrarme</button>
+                
+                <button class="pages-inisiar-sesion_btn btns">Iniciar Sesion</button>
+
+            </form>
+    
+            <div class="contentn-logo">
+                <p>SOFT</p> <p>CAMP</p>
+            </div>
+        </div>
+    </Main>
+
+    <Footer></Footer>
+
+
+</body>
+</html>

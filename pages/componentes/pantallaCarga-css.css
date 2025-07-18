@@ -1,0 +1,235 @@
+
+/* Configuracion*/
+:root{
+    --color-primary: rgb(2, 88, 2);
+    --color-primary-hover: rgb(1, 61, 1);
+    --color-secondary: #fff;
+    --background-color-primary: rgb(203, 255, 203) ;
+    --background-color-primary-transparent: rgba(0, 139, 0, 0.212) ;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--color-primary);
+}
+
+
+ul{
+    list-style: none;
+}
+
+input{
+    outline: 0;
+}
+
+button{
+    border: 0;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+img{
+    display: block;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/*Fin Configuracion*/
+
+/*base tractor*/
+.content-carga{
+    height: 100vh;
+    background-color: rgb(67, 158, 67);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content_tractor{
+    background-color: white;
+    position: relative;
+}
+
+.tractor_base_1{
+    width: 230px;
+    height: 70px;
+    background-color: green;
+    border-top-right-radius: 2em;
+    border-bottom-right-radius: .5em ;
+}
+
+.tractor_base_2{
+    position: absolute;
+    top: -60px;
+    left: 0;
+    width: 120px;
+    height: 130px;
+    background-color: green;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em ;   
+}
+
+/*llanta trasera*/
+
+.content-llanta-trasera{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 90px;
+    height: 90px;
+    
+}
+
+.position-llanta-trasera{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.guardabarro-trasero{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgb(3, 0, 0);
+    rotate: -10deg;
+    clip-path: polygon(100% 0%, -100% 0%, 100% 70%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.espacio-guardabarro-llanta{
+    background-color: rgba(105, 101, 101, 0.404);
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.llanta-trasea{
+    width: 110%;
+    height: 110%;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: -6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.llanta-interna{
+    background-color: black;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rin-llanta-trasera{
+    background-color: rgb(175, 175, 175);
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+}
+
+/*llanta delantera*/
+
+.content-llanta-delantera{
+    position: absolute;
+    top: 30px;
+    right: 5px;
+    width: 65px;
+    height: 65px;
+    
+}
+
+.position-llanta-delantera{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.guardabarro-delantera{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    rotate: -10deg;
+    background-color: rgb(3, 0, 0);
+    clip-path: polygon(100% 0%, -100% 0%, 100% 60%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.espacio-guardabarro-llanta-delantera{
+    background-color: rgba(105, 101, 101, 0.404);
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.llanta-delantera{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.llanta-interna-delantera{
+    background-color: black;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rin-llanta-delantera{
+    background-color: rgb(175, 175, 175);
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+}
+
+/*humo*/
+
+.tubo-humo-1{
+    position: absolute;
+    width: 15px;
+    height: 100px;
+    background-color: black;
+    top: -100px;
+    right: 30%;
+}
+
+.tubo-humo-2{
+    position: absolute;
+    width: 20px;
+    height: 15px;
+    background-color: black;
+    top: -103px;
+    right: 30.6%;
+    rotate: 12deg;
+}
