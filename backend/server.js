@@ -20,6 +20,14 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/index.html')); // enviar el archivo index.html al cliente
 });
 
+
+
+
+// en caso de pagina no encontrada, enviar un error 404
+app.use((req, res) => {
+    res.status(404).send('404 - Página no encontrada'); // enviar un mensaje de error 404 si la ruta no es encontrada
+})
+
 app.listen(PORT, () => {
     console.log(` ✅ Servidor escuchando en http://localhost:${PORT}`); // mensaje en consola indicando que el servidor está corriendo
     
