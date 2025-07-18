@@ -1,0 +1,15 @@
+# Node.js
+node_modules/
+.env
+
+# Logs
+logs
+*.log
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+
+# Compilados o temporales
+dist/
+build/

@@ -1,0 +1,25 @@
+{
+  "name": "softcamp",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000B\u0000a\u0000s\u0000e\u0000-\u0000S\u0000O\u0000F\u0000T\u0000C\u0000A\u0000M\u0000P\u0000-\u0000S\u0000E\u0000N\u0000A\u0000\r\u0000 \u0000",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PeterDMP98/Base-SOFTCAMP-SENA.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/PeterDMP98/Base-SOFTCAMP-SENA/issues"
+  },
+  "homepage": "https://github.com/PeterDMP98/Base-SOFTCAMP-SENA#readme",
+  "dependencies": {
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0"
+  }
+}
