@@ -1,0 +1,5 @@
+/*se configura e inicializa tailwind */
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

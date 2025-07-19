@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --watch backend/server.js"
+    "dev": "node --watch backend/server.js",
+    "tlwcss": "npx @tailwindcss/cli -i ./public/styles/styles-tailwind.css -o ./dist/styles.css --watch"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,13 @@
   },
   "homepage": "https://github.com/PeterDMP98/Base-SOFTCAMP-SENA#readme",
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
     "dotenv": "^17.2.0",
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11"
   }
 }
