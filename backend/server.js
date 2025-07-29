@@ -17,7 +17,7 @@ const __dirname = path.dirname(__filename); // obtener el nombre del directorio 
 // configurar express para servir archivos estáticos desde el directorio 'public'
 app.use(express.static(path.join(__dirname, '../public'))); // servir archivos estáticos desde el directorio 'public'
 
-app.use(express.static(path.join(__dirname, '../dist'))); // para que funcione /dist/styles.css
+app.use('/dist', express.static(path.join(__dirname, '../dist')));  // para que funcione /dist/styles.css
 
 /* INICIO - LOGIN */
 app.get('/', (req, res) => {
