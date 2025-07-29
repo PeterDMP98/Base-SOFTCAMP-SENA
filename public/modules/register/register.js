@@ -2,6 +2,8 @@
 document.getElementById('registerForm').addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    const form = e.target;
+
     /*valores de los inputs */
     const nombre = document.getElementById("nombre").value;
     const email = document.getElementById("email").value;
@@ -10,7 +12,7 @@ document.getElementById('registerForm').addEventListener("submit", async (e) => 
     const phone = document.getElementById("phone").value;
     const address = document.getElementById("address").value;
     const rol = document.getElementById("rol").value;
-    const termsConditions = document.getElementById("terms-conditions").value;
+    const termsConditions = document.getElementById("terms-conditions").checked;
     
     /*validacion de contrseñas iguales*/
 
@@ -22,22 +24,29 @@ document.getElementById('registerForm').addEventListener("submit", async (e) => 
     if (!termsConditions) {
         alert("Debe aceptar los terminos y condiciones");
         return;
-    }
+    };
 
-    const response = await fetch('/api/auth/register', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({nombre, email, password, phone, address, rol })
-    });
+    try {
+        const response = await fetch('/api/auth/register', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({nombre, email, password, phone, address, rol })
+        });
+        
+        const data = await response.json();
 
-    const data = await response.json();
+        if (response.ok) {
+            alert("Registro exitoso. Ahora puedes iniciar sesión.");
+            form.reset();
+            window.location.href = "/index.html";
+        } else {
+            alert(data.message || "Error al registrar.");
+        }
 
-    if (response.ok) {
-        alert("Registro exitoso. Ahora puedes iniciar sesión.")
-        window.location.href = "/index.html";
-    } else{
-        alert(data.message || "Error al registrar.");
-    }
-})
+    } catch (error) {
+        alert("Error de red o del servidor: " + error.message);
+    };
+
+});
 
 

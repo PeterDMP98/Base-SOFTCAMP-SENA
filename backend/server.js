@@ -20,21 +20,40 @@ app.use(express.static(path.join(__dirname, '../public'))); // servir archivos e
 app.use('/dist', express.static(path.join(__dirname, '../dist')));  // para que funcione /dist/styles.css
 
 /* INICIO - LOGIN */
+/*mostar login */
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/index.html')); // enviar el archivo index.html al cliente
 });
 
+/*recibir datos de usuario y contraseña */
+app.post('/auth/login', (req, res) => {
+    res.json({ message: "login exitoso" });
+});
+
 /*REGISTER */
-app.get('/api/auth/register', (req, res) => {
+/*mostar register */
+app.get('/register', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/modules/register/register.html'))
 });
 
-/*LOGIN */
-app.post('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, ''))
-})
+/*recibir datos del registro */
+app.post('/api/auth/register', (req, res) => {
+    res.json({ message: "registro exitoso" });
+});
+
+/*RECUPERAR CONTRASEÑA */
+/*mostar recuperacion de contraseña */
+app.get('/recovery_password', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/modules/recovery-password/recovery-password.html'))
+});
+
+/*recibir datos del formulario de contraseña */
+app.post('/api/auth/recovery_password', async (req, res) => {
+    res.json({ message: "Correo enviado con éxito" });
+});
 
 
+/*------------------------------------------- */
 
 // en caso de pagina no encontrada, enviar un error 404
 app.use((req, res) => {
