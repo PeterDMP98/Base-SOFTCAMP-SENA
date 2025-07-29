@@ -3,9 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <link href="./styles.css" rel="stylesheet">
+    <link rel="stylesheet" href=".//modules/login/login.css">
+    <script type="module" src="modules/login/login.js" defer></script>
+    <title>Login</title>
 </head>
-<body>
-    <h1>Inicio</h1>
+<body class="bg-[#e0e5ec] min-h-screen flex items-center justify-center">
+    <div  class="w-full max-w-md p-8 bg-[#e0e5ec] rounded-2xl shadow-[9px_9px_16px_#b8b9be,_-9px_-9px_16px_#ffffff]" >
+        <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">
+            Iniciar Sesion
+        </h1>
+    
+
+        <form id="loginForm" action="" class="space-y-4">
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+                <input id="email" type="email" name="email" required class="mt-1 w-full px-4 py-2 rounded-xl shadow-inner bg-[#e0e5ec] text-gray-700 outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+            
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+                <input id="password" type="password" name="password" required class="mt-1 w-full px-4 py-2 rounded-xl shadow-inner bg-[#e0e5ec] text-gray-700 outline-none focus:ring-2 focus:ring-blue-400" />            
+            </div>
+
+            <button type="submit" class="w-full py-2 px-4 rounded-xl bg-blue-500 text-white font-semibold hover:bg-blue-600 transition">Iniciar Sesion </button>
+
+        </form>
+
+        <div class="mt-4 text-sm text-center">
+            <a href="/recuperar-contraseña.html" class="text-blue-500 hover:underline">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <div class="mt-2 text-sm text-center">
+            <p>¿No tienes cuenta?</p>
+            <a href="/register.html" class="text-blue-500 hover:underline" >Regístrate aquí</a>
+        </div>
+    
+        <div class="mt-2 text-sm text-center contentn-logo">
+            <p>SOFT</p> <p>CAMP</p>
+        </div>
+    </div  >
 </body>
 </html>

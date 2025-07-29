@@ -3,62 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="register.js" defer></script>
-    <link rel="stylesheet" href="register-css.css">
-    <title>SOFTCAMP</title>
+    <link rel="stylesheet" href="/dist/styles.css">
+    <script type="module" src="./register.js" defer></script>
+    <title>Register</title>
 </head>
-<body>
-    <header></header>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
 
-    <Main>
-        <h1 class="title_inicio">
+    <div class="w-full max-w-md p-6 bg-white rounded-2xl shadow-md">
+        <h1 class="text-2xl font-bold text-center text-green-700 mb-6">
             Registro
         </h1>
     
-        <div class="content-form">
-            <form action="" class="form-inicio">
-                <input class="input-incio" id="register_nombre" type="text" name="nombre" placeholder="Nombre" required>
-                <input class="input-incio" id="register_email" type="text" name="email" placeholder="Correo" required>
-                <input class="input-incio" id="register_telefono" type="text" name="nombre" placeholder="telefono" required>
+
+            <form id="registerForm" class="space-y-4">
+
+                <div>
+                    <labelfor="nombre" class="block text-sm font-medium text-gray-700">Nombre Completo</label>
+                    <input id="nombre" type="text" name="nombre" required class="mt-1 w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400">
+                </div>
+
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+                    <input id="email" type="email" name="email" required class="mt-1 w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400">
+                </div>
+
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+                    <input id="password" type="password" name="password" required class="mt-1 w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400">
+                </div>
+
+                <div>
+                    <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirmar contraseña</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required class="mt-1 w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400" />
+                </div>
+
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-700">telefono</label>
+                    <input id="phone" type="text" name="phone" required class="mt-1 w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400">
+                </div>
                 
-                <div class="content-rol">
-                    <label for="campesino">Rol</label>
-                    <select class="select-rol" id="select_rol" name="rol">
-                        <option class="option-rol" value="campesino">Campesino</option>
-                        <option class="option-rol" value="Comprador">Comprador</option>
+                <div>
+                    <label for="address" class="block text-sm font-medium text-gray-700">direccion</label>
+                    <input id="address" type="text" name="address" required class="mt-1 w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400">
+                </div>
+                
+                <div>
+                    <label for="rol" class="block text-sm font-medium text-gray-700">Rol</label>
+                    <select id="rol" name="rol" required class="mt-1 w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400">
+                        <option value="" disabled selected >Selecciona un rol</option>
+                        <option value="campesino">Campesino</option>
+                        <option value="Comprador">Comprador</option>
                     </select>
                         
                 </div>
 
-                <input class="input-incio" id="register_ubicacion" type="text" name="ubicacion" placeholder="ubicacion" required>
-                <input class="input-incio" id="register_password" type="password" name="password" placeholder="Contraseña" required>
-
-                <div class="validaciones">
-                    <div class="content-validacion" >
-                        <label for="validacion">No soy un robot</label>
-                        <input class="input-incio-validacion" id="register_validacion" type="checkbox" name="password" required>
-                    </div>
-
-                    <div class="content-validacion">
-                        <label for="terminos">Acepto los terminos y condiciones</label>
-                        <input class="input-incio-validacion" id="register_terminos" type="checkbox" name="password" required>
-                    </div>
+                <div>
+                    <label for="terms-conditions" class="block text-sm font-medium text-gray-700">Acepto los terminos y condiciones</label>
+                    <input id="terms-conditions" type="checkbox" name="terms-conditions" required class="mt-1 w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400">
                 </div>
 
-                <button class="registrarme_btn btns" type="submit">Registrarme</button>
-                
-                <button class="pages-inisiar-sesion_btn btns">Iniciar Sesion</button>
 
+                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-xl transition duration-300">Registrarse</button>
+                    
             </form>
-    
+
+            <p class="mt-4 text-center text-sm text-gray-600">
+                ¿Ya tienes una cuenta? <a href="/index.html" class="text-green-600 hover:underline">Inicia sesión</a>
+            </p>
+            
             <div class="contentn-logo">
                 <p>SOFT</p> <p>CAMP</p>
             </div>
-        </div>
-    </Main>
-
-    <Footer></Footer>
-
+    </div>
 
 </body>
 </html>

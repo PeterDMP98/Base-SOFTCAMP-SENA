@@ -1,0 +1,25 @@
+/*logo*/
+
+.contentn-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: .2em;
+    user-select: none;
+}
+
+.contentn-logo> p:nth-child(1){
+    background-color: white;
+    padding: .1em 0 .1em .2em;
+    border-radius: .3em 0 0 .3em ;
+}
+
+.contentn-logo> p:nth-child(2){
+    color: #fff;
+    background-color: rgba(23, 189, 23, 0.836);
+    padding: .1em .2em .1em 0;
+    border-radius: 0 .3em .3em 0;
+}
