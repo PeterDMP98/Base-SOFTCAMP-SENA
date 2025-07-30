@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../modules/campesino/campesino-tareas/campesino-tareas.js" defer></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="/modules/campesino/campesino-tareas/campesino-tareas.css">
+    <link rel="stylesheet" href="/dist/styles.css" />
+    <title>Campesino | Tarea</title>
+  </head>
+  <body class="bg-[#eafaf1] p-4 min-h-screen">
+    <div class="flex rounded-2xl shadow-[9px_9px_16px_#b8b9be,_-9px_-9px_16px_#ffffff] bg-[#f0f8f4] overflow-hidden h-[calc(100vh-2rem)]">
+
+      <!-- Menú lateral izquierdo -->
+      <aside id="menuLateral" class="bg-[#f0f8f4]  w-64 transition-all duration-300 p-4 shadow-xl rounded-xl flex flex-col gap-4 relative">
+        <!-- Botón abrir y cerrar menu -->
+        <button id="toggleButtom" class=" cursor-pointer absolute -right-4 top-4 w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center shadow-md z-10">
+          <span id="toggleIcon" >⏴</span>
+        </button>
+
+        <!-- contenido del menu-->
+        <div class="flex flex-col h-full justify-between">
+          <!-- Navegacion -->
+          <nav class="flex flex-col gap-4">
+            <a href="campesino-tareas.html" class="flex items-center gap-3 text-gray-700 hover:text-green-600 transition-all">
+              <i data-lucide="list-check" class="w-5 h-5"></i>
+              <span class="menu-text">Tareas</span>
+            </a>
+
+            <a href="#" class="flex items-center gap-3 text-gray-700 hover:text-green-600">
+              <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+              <span class="menu-text">Pedidos</span>
+            </a>
+
+                        <a href="#" class="flex items-center gap-3 text-gray-700 hover:text-green-600">
+              <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+              <span class="menu-text">Productos</span>
+            </a>
+
+                        <a href="#" class="flex items-center gap-3 text-gray-700 hover:text-green-600">
+              <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+              <span class="menu-text">Ganado</span>
+            </a>
+
+                        <a href="#" class="flex items-center gap-3 text-gray-700 hover:text-green-600">
+              <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+              <span class="menu-text">Convenios</span>
+            </a>
+
+                        <a href="#" class="flex items-center gap-3 text-gray-700 hover:text-green-600">
+              <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+              <span class="menu-text">Insumos</span>
+            </a>
+
+                        <a href="#" class="flex items-center gap-3 text-gray-700 hover:text-green-600">
+              <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+              <span class="menu-text">Siembras</span>
+            </a>
+
+                        <a href="#" class="flex items-center gap-3 text-gray-700 hover:text-green-600">
+              <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+              <span class="menu-text">Pedidos</span>
+          </nav>
+
+          <div class="my-3 border-t border-gray-300"></div>
+
+        </div>
+
+
+        <!-- info usuario-->
+        
+        <div class=" info-user-tiempo border-t border-gray-300 pt-4">
+          <div class="flex items-center gap-3 mb-2">
+            <!--iamgen temporal-->
+            <img src="../../../assets/image/pedro.jpg" alt="Usuario" class=" w-10 h-10 rounded-full" />
+            <div class="menu-text">
+              <p class="text-sm font-medium text-gray-700">Pedro <span class="text-green-700 font-semibold">Campesino</span></p>
+              <p class="text-xs text-green-600">Activo</p>
+            </div>
+          </div>
+
+          <!-- Hora, fecha y cima-->
+          <div class="my-3 border-t border-gray-300"></div>
+
+          <div class=" info-user-tiempo menu-text text-sm text-gray-600">
+            <p id="hora">00:00</p>
+            <p id="fecha">29/07/2025</p>
+            <p id="clima">🌤️ 25°C -soleado</p>
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- MAIN: contenido principal-->
+
+      <main class="flex-1 p-4 bg-[#f0f8f4] rounded-2xl shadow-[6px_6px_12px_#b8b9be,_-6px_-6px_12px_#ffffff] ml-4 h-full flex flex-col">
+        
+        <!-- filtros -->
+
+        <section class="mb-4 border-b border-gray-300 pb-4">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+            <input type="text" placeholder="Buscar tarea..." class="w-full px-4 py-2 rounded-xl bg-[#e0e5ec] shadow-inner text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400"/>
+
+            <!--- filtro por estado-->
+            
+            <select class="px-4 py-2 w-full md:w-1/3 bg-[#e0e5ec] rounded-lg shadow-inner focus:ring-green-400 outline-none text-gray-700">
+              <option value="">Estado</option>
+              <option value="pendiente">Pendiente</option>
+              <option values="en_progreso">En progreso</option>
+              <option values="completada">Completada</option>
+              <option values="cancelada">Cancelada</option>
+            </select>
+
+            <!-- filtro por por tipo de tarea-->
+            <select class="px-4 py-2 w-full md:w-1/3 bg-[#e0e5ec] rounded-lg shadow-inner focus:ring-green-400 outline-none text-gray-700">
+              <option value="">Tipo</option>
+              <option value="ganado">Ganado</option>
+              <option value="pedido">Pedido</option>
+              <option value="insumo">Insumo</option>
+            </select>
+            
+            <button class="bg-green-600 hover:bg-green-700 text-white md:w-1/2 px-4 py-2 rounded-xl shadow-[6px_6px_12px_#b8b9be,_-6px_-6px_12px_#ffffff]"> Agregar tarea</button>
+        </section>
+      
+
+
+        <!-- LISTA DE TAREAS -->
+        <section class="flex-1 overflow-y-auto pr-2 space-y-4">
+          <!-- tareas estaticas temporal mientras se realiza la coneccion de la base de datos-->
+          
+          <!-- tarea 1 -->
+        
+          <div class=" bg-[#f0f8f4] rounded-xl p-4 shadow-inner shadow-white/70 border border-[#d3e2d8]">
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-lg font-semibold text-gray-800">Revisar ganado</h3>
+                <p class="text-sm text-gray-600">Ganado - 28/07/2025</p>
+              </div>  
+              <span class="px-2 py-1 text-sm rounded-full bg-yellow-100 text-yellow-800">Pendiente</span>
+            </div>
+            
+            <p class="text-sm text-gray-700 mt-2 description line-clamp-2 transition-all duration-300 ease-in-out">
+              Se debe realizar la vacunación de todo el ganado joven antes del fin de mes. Asegurarse de tener las dosis suficientes, registrar lotes y evitar duplicaciones.
+            </p>
+
+            <div class="flex justify-between space-y-2 gap-2 mt-2">
+              <button class="text-green-600 text-sm mt-1 hover:underline flex items-center">
+                Ver más <span class="ml-1">+</span>
+              </button>
+              
+              <div class="flex gap-2 mt-2 justify-end">
+                <button class="text-blue-600 hover:underline text-sm">Editar</button>
+                <button class="text-red-600 hover:underline text-sm">Eliminar</button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- tarea 2 -->
+
+          <div class="bg-[#f0f8f4] rounded-xl p-4 shadow-inner shadow-white/70 border border-[#d3e2d8]">
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-lg font-semibold text-gray-800">Revisar ganado</h3>
+                <p class="text-sm text-gray-600">Ganado - 28/07/2025</p>
+              </div>  
+              <span class="px-2 py-1 text-sm rounded-full bg-yellow-100 text-yellow-800">Pendiente</span>
+            </div>
+            
+            <p class="text-sm text-gray-700 mt-2 description line-clamp-2 transition-all duration-300 ease-in-out">
+              Se debe realizar la vacunación de todo el ganado joven antes del fin de mes. Asegurarse de tener las dosis suficientes, registrar lotes y evitar duplicaciones.
+            </p>
+
+            <div class="flex justify-between space-y-2 gap-2 mt-2">
+              <button class="text-green-600 text-sm mt-1 hover:underline flex items-center">
+                Ver más <span class="ml-1">+</span>
+              </button>
+              
+              <div class="flex gap-2 mt-2 justify-end">
+                <button class="text-blue-600 hover:underline text-sm">Editar</button>
+                <button class="text-red-600 hover:underline text-sm">Eliminar</button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- tarea 3 -->
+
+          <div class="bg-[#f0f8f4] rounded-xl p-4 shadow-inner shadow-white/70 border border-[#d3e2d8]">
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-lg font-semibold text-gray-800">Revisar ganado</h3>
+                <p class="text-sm text-gray-600">Ganado - 28/07/2025</p>
+              </div>  
+              <span class="px-2 py-1 text-sm rounded-full bg-yellow-100 text-yellow-800">Pendiente</span>
+            </div>
+            
+            <p class="text-sm text-gray-700 mt-2 description line-clamp-2 transition-all duration-300 ease-in-out">
+              Se debe realizar la vacunación de todo el ganado joven antes del fin de mes. Asegurarse de tener las dosis suficientes, registrar lotes y evitar duplicaciones.
+            </p>
+
+            <div class="flex justify-between space-y-2 gap-2 mt-2">
+              <button class="text-green-600 text-sm mt-1 hover:underline flex items-center">
+                Ver más <span class="ml-1">+</span>
+              </button>
+              
+              <div class="flex gap-2 mt-2 justify-end">
+                <button class="text-blue-600 hover:underline text-sm">Editar</button>
+                <button class="text-red-600 hover:underline text-sm">Eliminar</button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- tarea 4 -->
+          
+          <div class="bg-[#f0f8f4] rounded-xl p-4 shadow-inner shadow-white/70 border border-[#d3e2d8]">
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-lg font-semibold text-gray-800">Revisar ganado</h3>
+                <p class="text-sm text-gray-600">Ganado - 28/07/2025</p>
+              </div>  
+              <span class="px-2 py-1 text-sm rounded-full bg-yellow-100 text-yellow-800">Pendiente</span>
+            </div>
+            
+            <p class="text-sm text-gray-700 mt-2 description line-clamp-2 transition-all duration-300 ease-in-out">
+              Se debe realizar la vacunación de todo el ganado joven antes del fin de mes. Asegurarse de tener las dosis suficientes, registrar lotes y evitar duplicaciones.
+            </p>
+
+            <div class="flex justify-between space-y-2 gap-2 mt-2">
+              <button class="text-green-600 text-sm mt-1 hover:underline flex items-center">
+                Ver más <span class="ml-1">+</span>
+              </button>
+              
+              <div class="flex gap-2 mt-2 justify-end">
+                <button class="text-blue-600 hover:underline text-sm">Editar</button>
+                <button class="text-red-600 hover:underline text-sm">Eliminar</button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- tarea 5 -->
+          
+          <div class="bg-[#f0f8f4] rounded-xl p-4 shadow-inner shadow-white/70 border border-[#d3e2d8]">
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-lg font-semibold text-gray-800">Revisar ganado</h3>
+                <p class="text-sm text-gray-600">Ganado - 28/07/2025</p>
+              </div>  
+              <span class="px-2 py-1 text-sm rounded-full bg-yellow-100 text-yellow-800">Pendiente</span>
+            </div>
+            
+            <p class="text-sm text-gray-700 mt-2 description line-clamp-2 transition-all duration-300 ease-in-out">
+              Se debe realizar la vacunación de todo el ganado joven antes del fin de mes. Asegurarse de tener las dosis suficientes, registrar lotes y evitar duplicaciones.
+            </p>
+
+            <div class="flex justify-between space-y-2 gap-2 mt-2">
+              <button class="text-green-600 text-sm mt-1 hover:underline flex items-center">
+                Ver más <span class="ml-1">+</span>
+              </button>
+              
+              <div class="flex gap-2 mt-2 justify-end">
+                <button class="text-blue-600 hover:underline text-sm">Editar</button>
+                <button class="text-red-600 hover:underline text-sm">Eliminar</button>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+      </main>
+    </div>
+  </body>
+
+</html>

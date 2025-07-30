@@ -1,0 +1,11 @@
+main{
+    cursor: default;
+}
+
+button, a, link, input, select, img{
+    cursor: pointer;
+}
+
+.info-user-tiempo{
+    cursor: default;
+}

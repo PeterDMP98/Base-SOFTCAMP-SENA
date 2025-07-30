@@ -1,9 +1,16 @@
+// tailwind.config.js
+import lineClamp from '@tailwindcss/line-clamp';
+
 /** @type {import('tailwindcss').Config} */
-export const content = [
-  "./*.html",
-  "./src/**/*.{html,js}"
-];
-export const theme = {
-  extend: {},
+export default {
+  content: [
+    './*.html',
+    './src/**/*.{html,js}'
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [
+    lineClamp,
+  ],
 };
-export const plugins = [];

@@ -2,6 +2,13 @@
 document.getElementById('loginForm').addEventListener('submit', async (e) => {
   e.preventDefault()
 
+  /*codigo temporal par air a inico */
+  window.location.href = '/campesino-tarea'
+
+
+  /*
+  CODIGO RESERVADO PARA APLICAR AUTENTICACION
+
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
 
@@ -16,7 +23,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
     if (response.ok) {
       alert('Inicio de sesión exitoso ✅')
 
-      /*acceso segun el rol*/
+      //acceso segun el rol
       if (data.rol === 'campesino') {
         window.location.href = '/home_campesino.html';
       } else if (data.rol === 'comprador') {
@@ -30,5 +37,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
     console.error('Error al iniciar sesión:', error);
     alert('Error de conexión con el servidor');
   }
+  
+  */
 
 });

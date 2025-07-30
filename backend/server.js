@@ -52,7 +52,11 @@ app.post('/api/auth/recovery_password', async (req, res) => {
     res.json({ message: "Correo enviado con éxito" });
 });
 
-
+/*HOME CAMPESINO - TAREA */
+/*mostrar sesionde tareas NOTA: actualmente esa sin filtro falta conectar a la base de datos*/
+app.get('/campesino-tarea', (req,res) => {
+    res.sendFile(path.join(__dirname, '../public/modules/campesino/campesino-tareas/campesino-tareas.html'));
+})
 /*------------------------------------------- */
 
 // en caso de pagina no encontrada, enviar un error 404
